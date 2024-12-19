@@ -7,7 +7,7 @@ void UGameInstanceCPP::UpdateTime(float DeltaTime)
 {
 	DurationTime += DeltaTime;
 }
-
+// АХАХАХАХАХАХ ЩА ВСЁ УДАЛЮ!!!!!
 
 void UGameInstanceCPP::Setting(
 	//const bool& bShowFPS,
