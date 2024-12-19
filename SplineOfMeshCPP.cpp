@@ -3,11 +3,10 @@
 
 #include "SplineOfMeshCPP.h"
 
-// Sets default values
+
 ASplineOfMeshCPP::ASplineOfMeshCPP()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	//PrimaryActorTick.bCanEverTick = true;
+
 
 	SplComp = CreateDefaultSubobject<USplineComponent>("Spline");
 	SetRootComponent(SplComp);
@@ -28,8 +27,7 @@ void ASplineOfMeshCPP::OnConstruction(const FTransform& Transform)
 		StatMeshCompMain->SetStaticMesh(StatMesh);
 		StatMeshCompMain->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 		StatMeshCompMain->RegisterComponent();
-		//StatMeshCompMain->SetMobility(EComponentMobility::Static);
-		//AddInstanceComponent(StatMeshCompMain);
+		
 
 		TArray<FTransform> TransArr;
 
@@ -55,30 +53,4 @@ void ASplineOfMeshCPP::OnConstruction(const FTransform& Transform)
 		StatMeshCompMain->AddInstances(TransArr, false);
 	}
 }
-
-/*void ASplineOfMeshCPP::OnConstruction(const FTransform& Transform)
-{
-	Super::OnConstruction(Transform);
-
-	MeshArr.Empty();
-
-	if (StatMesh)
-	{
-		LeghtOfMesh = StatMesh->GetBounds().GetBox().GetSize().X;
-
-		int Kolvo = SplComp->GetSplineLength() / (LeghtOfMesh + Between);
-
-		for (int i = 0; i < Kolvo; i++)
-		{
-			UStaticMeshComponent* NewStatMeshComp = NewObject<UStaticMeshComponent>(this, FName("StatMeshComp" + FString::FromInt(i + 1)));
-			
-			NewStatMeshComp->RegisterComponent();
-			NewStatMeshComp->CreationMethod = EComponentCreationMethod::UserConstructionScript;
-			NewStatMeshComp->SetStaticMesh(StatMesh);
-			NewStatMeshComp->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-			NewStatMeshComp->SetRelativeLocation(SplComp->GetLocationAtDistanceAlongSpline(i * (LeghtOfMesh + Between), ESplineCoordinateSpace::Local));
-			NewStatMeshComp->SetRelativeRotation(SplComp->GetRotationAtDistanceAlongSpline(i * (LeghtOfMesh + Between), ESplineCoordinateSpace::Local));
-		}
-	}
-}*/
 
