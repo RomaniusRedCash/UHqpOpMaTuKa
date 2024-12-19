@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -15,7 +13,6 @@ class SOVKOCAR2_API ASplineOfMeshCPP : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ASplineOfMeshCPP();
 
 	UPROPERTY(EditAnywhere)
@@ -36,16 +33,18 @@ public:
 
 	UPROPERTY()
 	UInstancedStaticMeshComponent* StatMeshCompMain;
-	//TArray<UStaticMeshComponent*> MeshArr;
+
+
+
+
+//Анша Абдуль!
 
 protected:
-	// Called when the game starts or when spawned
-	//virtual void BeginPlay() override;
+
 
 	virtual void OnConstruction(const FTransform& Transform) override;
 
 public:	
-	// Called every frame
-	//virtual void Tick(float DeltaTime) override;
+
 
 };
