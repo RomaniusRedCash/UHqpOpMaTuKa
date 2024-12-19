@@ -11,7 +11,7 @@ ASplineOfMeshCPP::ASplineOfMeshCPP()
 	SplComp = CreateDefaultSubobject<USplineComponent>("Spline");
 	SetRootComponent(SplComp);
 
-	//SplComp->SetMobility(EComponentMobility::Static);
+
 	RootComponent->SetMobility(EComponentMobility::Static);
 }
 
